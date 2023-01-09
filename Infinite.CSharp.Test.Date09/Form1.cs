@@ -37,19 +37,24 @@ namespace Infinite.CSharp.Test.Date09
             dc[0] = ds.Tables["Customer"].Columns["city"];
             ds.Tables["Customer"].PrimaryKey = dc;
             DataRow dr = ds.Tables["customer"].Rows.Find(TxtCustomerCity.Text);
-            if (dr != null)          
-                {
-                DataTable ds = new DataTable();
-                da.Fill(ds);
-                Grid1.DataSource = ds;
-                }
-                else
-                {
-                    LblMessage.Text = "No Records";
-                }
+            if (dr != null)
+            {
+                DataSet ds = new DataSet();
+                da.Fill(ds, "customer");
+                Grid1.DataSource = ds.Tables["Customer"].DefaultView;
             }
+            else
+            {
+                LblMessage.Text = "No Records";
+            }
+        }
+
+        private void CbSortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
+}
 
        

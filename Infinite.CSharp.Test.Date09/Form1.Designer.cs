@@ -70,6 +70,7 @@
             this.CbSortBy.Name = "CbSortBy";
             this.CbSortBy.Size = new System.Drawing.Size(157, 21);
             this.CbSortBy.TabIndex = 3;
+            this.CbSortBy.SelectedIndexChanged += new System.EventHandler(this.CbSortBy_SelectedIndexChanged);
             // 
             // Grid1
             // 
